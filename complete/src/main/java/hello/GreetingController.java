@@ -18,7 +18,10 @@ public class GreetingController {
     }
 
     @RequestMapping("/contacts")
-    public Contacts contacts(@RequestParam(value="name", defaultValue="User") String name) {
-        return new Contacts(counter.incrementAndGet(), String.format(contact[0], name));
+    public Contacts[] contacts(@RequestParam(value="name", defaultValue="<Content not paste>") String name) {
+        return new Contacts[]{
+                new Contacts(counter.incrementAndGet(), String.format(contact[0], name)),
+                new Contacts(counter.incrementAndGet(), String.format(contact[1], name))
+        };
     }
 }
