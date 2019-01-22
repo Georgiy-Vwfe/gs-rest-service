@@ -1,8 +1,8 @@
 package hello;
 
 public class Content {
-    protected final long id;
-    protected final String content;
+    private final long id;
+    private final String content;
 
     protected Content(long id, String content) {
         this.id = id;
